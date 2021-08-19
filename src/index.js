@@ -8,7 +8,7 @@ const body = document.querySelector('body');
 const changeTheme = document.querySelector('#theme-switch-toggle');
 
 
-getStorageData();
+setStorageData();
 
 
 //  body.classList.add(Theme.LIGHT);
@@ -20,20 +20,12 @@ function onChangeCheckBox() {
 	 
 	 body.classList.toggle(Theme.DARK);
 	 
-	sessionStorage.setItem('current-theme', body.getAttribute('class'));
-	if (body.classList.contains(Theme.DARK)) {
-		changeTheme.setAttribute('checked', 'true');
-		sessionStorage.setItem('checkbox-condition', changeTheme.getAttribute('checked'));
-	}
-	else {
-		changeTheme.setAttribute('checked', 'false');
-		sessionStorage.setItem('checkbox-condition', changeTheme.getAttribute('checked'));
-	}
+	 sessionStorage.setItem('current-theme', body.getAttribute('class'));
 }
-function getStorageData() {
+function setStorageData() {
 	const savedData = sessionStorage.getItem('current-theme');
 	if (savedData) {
 		body.classList.add(savedData);
-		changeTheme.setAttribute('checked', sessionStorage.getItem('checkbox-condition'));
+		changeTheme.setAttribute('checked', 'true');
 	}
 }
