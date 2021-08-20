@@ -8,7 +8,7 @@ const Theme = {
   DARK: 'dark-theme',
 };
 const body = document.querySelector('body');
-const menuList = document.querySelector('js-menu');
+const menuList = document.querySelector('.js-menu');
 const changeTheme = document.querySelector('#theme-switch-toggle');
 const menuMarkup = createMarkup(menu);
 
