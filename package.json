@@ -32,18 +32,21 @@
     "parcel-plugin-custom-dist-structure": "^1.1.18"
   },
   "customDistStructure": {
-  "config": {
-    ".js": "js",
-    "images": [
-      ".jpg",
-      ".png",
-	  "svg"
-    ],
-    ".fileExtension": "folder/in/dist",
-    "folder/in/dist": [ ".file", ".extensions" ]
-  },
-  "options": {
-    "development": true
+    "config": {
+      ".js": "js",
+      "images": [
+        ".jpg",
+        ".png",
+        "svg"
+      ],
+      ".fileExtension": "folder/in/dist",
+      "folder/in/dist": [
+        ".file",
+        ".extensions"
+      ]
+    },
+    "options": {
+      "development": true
+    }
   }
-}
 }

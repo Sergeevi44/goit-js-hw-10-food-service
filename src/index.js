@@ -1,3 +1,6 @@
+import menuItemsMarkupTemplate from './templates/menu-items.hbs';
+import menu from './menu.json';
+
 const { classBody } = require("babel-types");
 
 const Theme = {
@@ -5,9 +8,11 @@ const Theme = {
   DARK: 'dark-theme',
 };
 const body = document.querySelector('body');
+const menuList = document.querySelector('js-menu');
 const changeTheme = document.querySelector('#theme-switch-toggle');
+const menuMarkup = createMarkup(menu);
 
-
+menuList.insertAdjacentHTML('beforeend', menuMarkup);
 setStorageData();
 
 
@@ -28,4 +33,7 @@ function setStorageData() {
 		body.classList.add(savedData);
 		changeTheme.setAttribute('checked', 'true');
 	}
+}
+function createMarkup(menu) {
+	return menuItemsMarkupTemplate(menu);
 }
